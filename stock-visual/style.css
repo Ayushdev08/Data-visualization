@@ -1,0 +1,159 @@
+/* style.css */
+
+/* Base styles remain the same */
+body {
+    background-color: #F0F8FF; /* Light background for better contrast */
+    font-family: 'Arial', sans-serif; /* Clean font for readability */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+.container {
+    margin: 20px auto; /* Center the container */
+    max-width: 1200px; /* Maximum width for larger screens */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 10px; /* Rounded corners for a modern look */
+    background-color: #ffffff; /* White background for the container */
+    overflow: hidden; /* Prevent overflow */
+    padding: 15px; /* Add padding for better spacing */
+    position: relative; /* Positioning for loader */
+}
+
+h2 {
+    color: #343a40; /* Darker color for headings */
+    text-align: center; /* Center align headings */
+    margin-bottom: 20px; /* Space below headings */
+}
+
+#search-box, #sort-options, #filter-button {
+    width: 100%; /* Full width for inputs and button */
+    padding: 10px; /* Padding for better touch targets */
+    box-sizing: border-box; /* Include padding in width */
+    margin-bottom: 15px; /* Space below each input/button */
+}
+
+#search-box:focus {
+    transform: scale(1.05); /* Slightly enlarge the search box on focus */
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); /* Blue shadow on focus */
+}
+
+/* List group styles */
+.list-group {
+    max-height: 300px; /* Limit height for scrolling */
+    overflow-y: auto; /* Enable vertical scrolling */
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+.list-group-item {
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Transition for 3D effect */
+    padding: 10px; /* Padding for list items */
+    cursor: pointer; /* Pointer cursor for list items */
+}
+
+.list-group-item:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+    background-color: #e9ecef; /* Slightly change background color on hover */
+}
+
+#company-chart {
+    margin-top: 20px; /* Space above chart */
+    border-radius: 10px; /* Rounded corners for the chart */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+
+/* Loading Spinner Styles */
+.loader {
+    border: 8px solid #f3f3f3; /* Light grey */
+    border-top: 8px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite; /* Animation */
+    position: absolute; /* Positioning */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the spinner */
+    display: none; /* Initially hidden */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* Light text color */
+}
+
+.dark-mode .container {
+    background-color: #1e1e1e; /* Darker container background */
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1); /* Lighter shadow for depth */
+}
+
+.dark-mode h2 {
+    color: #ffffff; /* Light color for headings in dark mode */
+}
+
+.dark-mode #search-box,
+.dark-mode #sort-options,
+.dark-mode #filter-button {
+    background-color: #2c2c2c; /* Dark background for inputs and button */
+    color: #ffffff; /* Light text color */
+}
+
+.dark-mode #search-box:focus {
+    box-shadow: 0 0 10px rgba(0, 123, 255 , 0.5); /* Blue shadow on focus */
+}
+
+.dark-mode .list-group {
+    background-color: #1e1e1e; /* Darker background for list */
+}
+
+.dark-mode .list-group-item {
+    background-color: #2c2c2c; /* Dark background for list items */
+    color: #ffffff; /* Light text color for list items */
+}
+
+.dark-mode .list-group-item:hover {
+    background-color: #383838; /* Slightly lighter background on hover */
+}
+
+.dark-mode #company-chart {
+    background-color: #1e1e1e; /* Dark background for chart */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .container {
+        margin: 10px; /* Reduce margin on smaller screens */
+    }
+    
+    h2 {
+        font-size: 1.5em; /* Slightly smaller font size for headings */
+    }
+
+    #search-box, #sort-options, #filter-button {
+        padding: 8px; /* Adjust padding for smaller devices */
+    }
+
+    .list-group {
+        max-height: 200px; /* Reduce max height for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.2em; /* Further reduce font size for very small devices */
+    }
+
+    #search-box, #sort-options, #filter-button {
+        padding: 6px; /* Further adjust padding for very small devices */
+    }
+
+    .list-group {
+        max-height: 150px; /* Further reduce max height for very small screens */
+    }
+}
